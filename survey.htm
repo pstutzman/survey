@@ -1,0 +1,178 @@
+<?php
+ /* Name: Paula Stutzman
+ Date: 02/21/2017
+ File Name: survey.htm
+ Purpose: To create a form asking for a name, email, 3 questions
+ using checkboxes/radio buttons/drop down box, and a
+ comment box. Also check the form for errors.
+
+ Extra credit code has been added and labeled "EXTRA CREDIT"
+ */
+
+ ?>
+ <html>
+
+ <head>
+ <title> Project 2</title>
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"
+></script>
+ <link rel="stylesheet" href="
+https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.cs
+s">
+ <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js
+"></script>
+
+<style type="text/css">
+ body {font-family: sans-serif; background-color: #39ff14; }
+ .box {position: absolute; height:100px; width: 100px; border:3px solid yellow;
+background: red;}
+ .box2 {position: absolute; height:160px; width: 400px; border:10px solid
+green; background: yellow;}
+ .outer {margin: 10px 5%; padding: 3%; background-color: white; min-height:
+400px; }
+ #newdiv {border: 1px solid green; padding 1%; margin-bottom: 10px;}
+ .pad {padding: 50px;}
+ #run {font-family: monospace; font-size: .9em; width: 90%; z-index:999}
+ #commands {font-family: monospace; white-space: pre-wrap; float:right;
+min-height: 400px; border: 1px solid red; width: 40%; min-width: 360px;
+overflow: scroll}
+ #commands span:hover {cursor: pointer}
+
+ </style>
+
+ </head>
+
+ <body>
+
+<form action='surveyproc.php' method='post'>
+
+ <h1 id='cool6'>Project 2 - Survey - Paula Stutzman</h1>
+
+ <h3>Please take some time to fill out the following questionnaire: </h3>
+
+ <h4><i> * Required fields </i></h4>
+
+ <!-- Name box -->
+
+ <div id='cool4'>
+ <label for="name">1. What is your name? *</label>
+ <input type="text" id="name" name="name">
+</div>
+ <br />
+
+ <!-- email box -->
+
+ <div>
+ <label for="email">2. What is your email address? * </label>
+ <input id='cool3'type="text" id="email" name="email">
+ </div>
+
+ <!-- drop down box box -->
+
+ <div id='cool5'>
+ <p>3. What finals sporting event would you have liked to have watched in person? *<br />
+<br />
+ <select name="sporting_event">
+ <option value=""> --select a finals sporting event-- </option>
+ <option value="The World Series Game 7 - Cubs vs. Indians">World Series Game 7 - Cubs
+vs. Indians</option>
+ <option value="The Final 4 Championship Game - Villanova vs. North Carolina">Final 4
+Championship Game - Villanova vs. North Carolina </option>
+ <option value="The NBA Championship Game 7 - Warriors vs Cavaliers">NBA Championship
+Game 7 - Warriors vs Cavaliers</option>
+ <option value="The Super Bowl - Falcons vs. Patriots">Super Bowl - Falcons vs. Patriots
+</option>
+ </select>
+ </p>
+ </div>
+
+<!-- radio buttons -->
+
+ <div id='cool2'>
+ <p>4. What is your favorite sport? *<br />
+ <br />
+ <input type="radio" name="sport" id="sport0" value="Archery">
+ <label for="sport0">Archery<label><br />
+
+ <input type="radio" name="sport" id="sport0" value="Baseball">
+ <label for="sport0">Baseball<label><br />
+
+ <input type="radio" name="sport" id="sport0" value="Basketball">
+ <label for="sport0">Basketball<label><br />
+
+<input type="radio" name="sport" id="sport0" value="Duck Pins">
+ <label for="sport0">Duck Pins<label><br />
+
+ <input type="radio" name="sport" id="sport0" value="Football">
+ <label for="sport0">Football<label><br />
+
+ <input type="radio" name="sport" id="sport0" value="Hockey">
+ <label for="sport0">Hockey<label><br />
+
+ <input type="radio" name="sport" id="sport0" value="Sporting Clays">
+ <label for="sport0">Sporting Clays<label><br />
+
+ <input type="radio" name="sport" id="sport0" value="ZZ Birds">
+ <label for="sport0">ZZ Birds<label><br />
+ </p>
+ </div>
+
+
+ <!-- check boxes -->
+
+ <!-- EXTRA CREDIT -->
+
+<div id='funOL'>
+ <p>5. Which sports did you play as a kid? * <br /><br />
+
+
+ <input type="checkbox" id="kid1" name="kid[]" value="Sandlot baseball"><label for=
+"kid1">Sandlot baseball</label><br>
+
+ <input type="checkbox" id="kid2" name="kid[]" value="Pickup basketball"><label for=
+"kid2">Pickup basketball</label><br>
+
+ <input type="checkbox" id="kid3" name="kid[]" value="Pond hockey"><label for="kid3">
+Pond hockey</label><br>
+
+ <input type="checkbox" id="kid4" name="kid[]" value="Stick ball"><label for="kid4">
+Stick ball</label><br>
+ </p>
+ </div>
+
+ <!-- comments box -->
+
+ <div id='funOOPS'>
+ <label for='comments'>Comments:</label><br />
+ <textarea id='comments' name='comments' rows=7 cols=65>
+ </textarea>
+ <br />
+ </div>
+
+<!-- hidden data -->
+
+ <input type="hidden" name="chicken" value="The chicken runs at midnight!">
+
+ <!-- submit button -->
+
+ <input id='cool1' type="submit" name="submit" value="Submit your survey">
+ <br />
+
+ </form>
+
+ </body>
+
+ </html>
+
+ <script>
+ $('#funOL').effect( "size", { to: { width: 600, height: 5 }}, 1200 )
+ $('#funOOPS').effect( "size", { to: { width: 600, height: 50 }},1200 )
+ $('#cool1').effect('highlight',{color:'blue'}, 3000)
+ $('#cool2').fadeTo(1000, 0.4)
+ $('#cool3').animate({width: 600, height: 50})
+ $('#cool4').effect('bounce',{distance:200})
+$('#cool5').effect('bounce',{distance:300, direction:'right'})
+ $('#cool6').effect('fold', 3000)
+
+ </script>
